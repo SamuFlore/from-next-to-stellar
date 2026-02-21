@@ -569,7 +569,7 @@ int func(int x, int y) {
 {% box child:tabs %}
 {% tabs %}
 <!-- tab 图文混排 -->
-{% image https://res.xaox.cc/posts/20250706162325884.webp-hd 个人电脑作为办公设备时，我们该如何保护隐私？ download:true ratio:1200/600 %}
+{% image https://i.mituw.com/imgs/2026/02/19/64eb488aa1b8f4cf.jpg 个人电脑作为办公设备时，我们该如何保护隐私？（图文无关） download:true ratio:1200/600 %}
 
 公司一般都会强制安装安防软件，这些软件要求开机自启动，要求有屏幕录制权限、完全的磁盘访问权限包括相册图库。因此如果使用自己的 MacBook 作为办公设备，必须要把生活区和工作区完全独立开，安装在两个磁盘分区，并且对磁盘分区进行加密。
 
@@ -577,5 +577,165 @@ int func(int x, int y) {
 <script src="https://gist.github.xaox.cc/xaoxuu/c983c958ef0deab819376c231e977ba7.js"></script>
 {% endtabs %}
 {% endbox %}
+
+## Folding
+折叠容器。
+{% tabs %}
+<!-- tab 效果 -->
+{% folding 默认打开的代码块 child:codeblock open:true color:yellow %}
+```c
+for (int i = 0; i < 20; i++) {
+    arr[i] = i;
+}
+```
+{% endfolding %}
+
+{% folding 默认折叠的代码块 child:codeblock open:false color:yellow %}
+```c
+arr[0] = 0;
+arr[1] = 1;
+arr[2] = 2;
+arr[3] = 3;
+arr[4] = 4;
+arr[5] = 5;
+arr[6] = 6;
+arr[7] = 7;
+arr[8] = 8;
+arr[9] = 9;
+arr[10] = 10;
+arr[11] = 11;
+arr[12] = 12;
+arr[13] = 13;
+arr[14] = 14;
+arr[15] = 15;
+arr[16] = 16;
+arr[17] = 17;
+arr[18] = 18;
+arr[19] = 19;
+```
+{% endfolding %}
+<!-- tab 格式 -->
+```md 格式
+{% folding title [child:codeblock] [open:bool] [color:color] %}
+正文
+{% endfolding %}
+```
+<!-- tab 样例 -->
+````md 样例
+{% folding 默认打开的代码块 child:codeblock open:true color:yellow %}
+```c
+for (int i = 0; i < 20; i++) {
+    arr[i] = i;
+}
+```
+{% endfolding %}
+
+{% folding 默认折叠的代码块 child:codeblock open:false color:yellow %}
+```c
+arr[0] = 0;
+arr[1] = 1;
+arr[2] = 2;
+arr[3] = 3;
+arr[4] = 4;
+arr[5] = 5;
+arr[6] = 6;
+arr[7] = 7;
+arr[8] = 8;
+arr[9] = 9;
+arr[10] = 10;
+arr[11] = 11;
+arr[12] = 12;
+arr[13] = 13;
+arr[14] = 14;
+arr[15] = 15;
+arr[16] = 16;
+arr[17] = 17;
+arr[18] = 18;
+arr[19] = 19;
+```
+{% endfolding %}
+````
+{% endtabs %}
+
+{% folding 不要打开这个。 %}
+使用不同的颜色，可以提高警示效果！
+{% folding 请不要打开这个。 color:yellow %}
+随着颜色加深，警示效果越发明显。
+{% folding 再说一次，请不要打开这个。 color:orange %}
+你在干什么？
+{% folding 最后说一次，不要打开这个。 color:red %}
+男的来了女的来了男同来了女同来了男娘来了萝莉来了正太来了伪娘来了变性来了人妖来了武装直升机来了沃尔玛塑料袋来了高松灯来了爱音来了素世来了要乐奈来了立希来了海铃来了初华来了喵梦来了小睦来了小孩来了桃香来了打车的来了小智来了皮卡丘来了卢帕拉了小姨来了废物老爹来了舔狗来了神人来了奶龙来了贝利亚来了哈基米来了咕咕嘎嘎来了灵感菇来了曼波来了小明剑魔来了甲亢哥来了电棍来了炫狗来了若子来了原子弹来了小男孩来了神父来了胖子来了大胃袋来了丁真来了雪豹来了倪哥来了雨姐来了孙笑川来了东雪莲来了塔菲来了揽佬来了时代少年团来了马嘉祺来了丁程鑫来了刘耀文来了宋亚轩来了张真源来了严浩翔来了贺峻霖来了华为来了小米来了三星来了原神来了战狼来了白象来了肯德基来了麦当劳来了叮咚鸡来了异世界来了转生者来了系统来了金手指来了老八来了奥利给来了外星人来了二次元来了纸片人来了
+{% endfolding %}
+{% endfolding %}
+{% endfolding %}
+{% endfolding %}
+
+## Folders
+简约版 Folding。
+{% tabs %}
+<!-- tab 效果 -->
+{% folders %}
+<!-- folder 题目 1 -->
+这是答案 1。
+<!-- folder 题目 2 -->
+这是答案 2。
+{% endfolders %}
+<!-- tab 样例 -->
+```md 样例
+{% folders %}
+<!-- folder 题目 1 -->
+这是答案 1。
+<!-- folder 题目 2 -->
+这是答案 2。
+{% endfolders %}
+```
+{% endtabs %}
+
+## Tabs
+源自 NexT 语法。
+{% blockquote %}
+- 支持设置 `align:center` 来使内容居中
+- 设置默认激活的标签方式为 `active:1` 而非 `, 1`（使用默认格式降低学习成本，且显式声明可读性更强）
+- 不需要 `<!-- endtab -->` 来作为结束标识（因为 Stellar 会自动判断）
+- 不需要 `tabs id` 来保证唯一性（因为 Stellar 会设置唯一标识）
+- 不支持 `@icon` 方式设置图标（因为 Stellar 不再内置 fontawesome 图标库）
+- 轮廓样式简化，可以搭配其它容器类标签嵌套使用。
+{% endblockquote %}
+
+## Grid
+网格分区。  
+```md 格式
+{% grid [c:integer] [w:px] [bg:box/card] [gap:px] [br:px] %}
+<!-- cell -->
+Cell 1.
+<!-- cell -->
+Cell 2.
+{% endgrid %}
+```
+```yaml 参数含义
+c: 固定列数，不声明则为动态列数
+w: 设置最小宽度
+bg: box 为普通样式，card 为可悬浮样式
+gap: 两个 Cell 的间距
+br: 圆角大小
+```
+
+{% tabs %}
+<!-- tab Box 样式 -->
+{% grid bg:box c:2 %}
+<!-- cell -->
+Cell 1
+<!-- cell -->
+Cell 2
+{% endgrid %}
+<!-- tab Card 样式 -->
+{% grid bg:card c:2 %}
+<!-- cell -->
+Cell 1
+<!-- cell -->
+Cell 2
+{% endgrid %}
+{% endtabs %}
+
 
 知道了这些，可以满足我写作时的绝大多数需求。
