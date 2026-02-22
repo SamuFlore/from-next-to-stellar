@@ -37,7 +37,7 @@ contributors:
 在 GitHub 新建一个仓库，用以存放文档的 Markdown 文件，比如仓库名叫做 `MyRepo`。假设文档名为 `MyWiki`。
 {% note color:yellow 注意 “文档名”指的是文档配置文件的名字，也就是 `source/_data/wiki/MyWiki.yml`。 %}
 在 `edit_this_page` 字段下新增：
-{% copy 'wiki/MyWiki/':https://github.com/MyName/MyRepo/blob/main/ %}
+{% copy 'wiki/MyWiki/':https://github.com/MyName/MyRepo/blob/main/ prefix:YAML %}
 把 `MyName` 换成你用户名，`MyWiki` 换成你文档名，`MyRepo` 换成你仓库的名字即可。
 
 ### 本文仓库
@@ -46,3 +46,7 @@ contributors:
 repo: # 仓库地址
 ```
 用于填入 GitHub 仓库。这里只需要填入 `用户名/仓库名`，Stellar 会自动为你补全地址。
+
+```yaml MyWiki.yml
+repo: MyName/MyRepo
+```
