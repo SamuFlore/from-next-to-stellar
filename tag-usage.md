@@ -2,7 +2,7 @@
 wiki: next-stellar # 这是项目id，对应 /data/wiki/hexo-stellar.yml
 title: '标签语法'
 date: 
-banner: https://i.mituw.com/imgs/2026/02/19/a4954f2727ba5007.png
+banner: https://i.mituw.com/imgs/2026/02/22/42ae779a61d0ec23.jpg
 katex:
 topic:
 author:
